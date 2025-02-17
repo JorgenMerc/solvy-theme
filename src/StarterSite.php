@@ -24,8 +24,11 @@ class StarterSite extends Site {
 	 */
 	public function __construct() {
 		add_action( 'after_setup_theme', [ $this, 'theme_supports' ] );
+        add_action( 'after_setup_theme', array( $this, 'theme_remove_supports' ) );
+
 		add_action( 'init', [ $this, 'register_post_types' ] );
 		add_action( 'init', [ $this, 'register_taxonomies' ] );
+		add_action( 'init', [ $this, 'theme_add_static_routes' ] );
 
 		add_filter( 'timber/context', [ $this, 'add_to_context' ] );
 		add_filter( 'timber/twig/filters', [ $this, 'add_filters_to_twig' ] );
@@ -38,12 +41,16 @@ class StarterSite extends Site {
 	/**
 	 * This is where you can register custom post types.
 	 */
-	public function register_post_types() {}
+	public function register_post_types() {
+
+    }
 
 	/**
 	 * This is where you can register custom taxonomies.
 	 */
-	public function register_taxonomies() {}
+	public function register_taxonomies() {
+
+    }
 
 	/**
 	 * This is where you add some context.
@@ -51,9 +58,6 @@ class StarterSite extends Site {
 	 * @param array $context context['this'] Being the Twig's {{ this }}
 	 */
 	public function add_to_context( $context ) {
-		$context['foo']   = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::context();';
 		$context['menu']  = Timber::get_menu( 'primary_navigation' );
 		$context['site']  = $this;
 
@@ -67,7 +71,9 @@ class StarterSite extends Site {
 		// Register navigation menus
 		register_nav_menus(
 			[
-				'primary_navigation' => _x( 'Main menu', 'Backend - menu name', 'timber-starter' ),
+				'primary_navigation' => 'Главное меню',
+				'footer_navigation' => 'Меню в подвале',
+				'handheld_navigation' => 'Меню мобильной версии',
 			]
 		);
 
@@ -123,6 +129,28 @@ class StarterSite extends Site {
 
 		add_theme_support( 'menus' );
 	}
+
+    public function theme_remove_supports() {
+        remove_action('wp_head', 'wp_generator');
+        remove_action('wp_head', 'print_emoji_detection_script', 7);
+        remove_action('wp_print_styles', 'print_emoji_styles');
+        remove_action('admin_print_scripts', 'print_emoji_detection_script');
+        remove_action('admin_print_styles', 'print_emoji_styles');
+
+        add_filter('show_admin_bar', '__return_false');
+    }
+
+    function theme_add_static_routes() {
+        wp_scripts()->add_data( 'jquery', 'group', 1 );
+        wp_scripts()->add_data( 'jquery-core', 'group', 1 );
+        wp_scripts()->add_data( 'jquery-migrate', 'group', 1 );
+
+        wp_enqueue_script('jquery');
+        wp_enqueue_script('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', 'jquery', '', true);
+        wp_enqueue_script('theme-scripts', get_template_directory_uri() . '/assets/scripts/script.js', 'jquery', '', true);
+
+        wp_enqueue_style('theme-styles', get_template_directory_uri() . '/assets/styles/style.css');
+    }
 
 	/**
 	 * This would return 'foo bar!'.
