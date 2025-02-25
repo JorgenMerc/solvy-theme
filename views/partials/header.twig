@@ -1,0 +1,35 @@
+<header class="header">
+    <div class="wrapper">
+        <div class="header-flex">
+            <div class="emblem-container">
+                <a href="{{ site.url }}" title="Go to Frontpage" aria-label="Go to Frontpage">
+                    <img src="{{ theme.link }}/assets/images/emblem.svg" width="150" height="38" alt="Solvy logo" />
+                </a>
+            </div>
+            <nav id="nav-main" class="nav-main">
+                {% include 'partials/menu.twig' with {
+                    items: primary_navigation.items
+                } %}
+            </nav>
+            <div class="vcard">
+                <div class="fn org hidden">
+                    {{ site.title }}
+                </div>
+                {% if site.option('vcard_setting_tg') %}
+                    <div class="social telegram">
+                        <a href="{{ site.option('vcard_setting_tg') }}" title="Solvy's Telegram" aria-label="Solvy's Telegram">
+                            <img src="{{ theme.link }}/assets/images/tg.svg" width="32" height="32" />
+                        </a>
+                    </div>
+                {% endif %}
+                {% if site.option('vcard_setting_skype') %}
+                    <div class="social skype">
+                        <a href="{{ site.option('vcard_setting_skype') }}" title="Solvy's Skype" aria-label="Solvy's Skype">
+                            <img src="{{ theme.link }}/assets/images/skype.svg" width="32" height="32" />
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</header>

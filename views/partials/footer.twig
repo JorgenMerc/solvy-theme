@@ -1,1 +1,48 @@
-<footer id="footer">Copyright {{ 'now'|date('Y') }}</footer>
+<footer id="footer">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col lg:w-1/2 text-center md:text-left">
+                <div class="emblem-container w-full">
+                    <a href="{{ site.url }}" title="Go to Frontpage" aria-label="Go to Frontpage">
+                        <div class="flex md:flex-row flex-col gap-8 items-center">
+                            <img src="{{ theme.link }}/assets/images/emblem.svg" width="150" height="38" alt="Solvy logo" />
+                            <p>
+                                Solve payment problems<br /><span class="text-firm_blue">with Solvy</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    Copyright {{ 'now'|date('Y') }}, All Rights Reserved
+                </div>
+            </div>
+            <div class="col lg:w-1/2 !items-end">
+                <nav id="nav-main" class="nav-main">
+                    {% include 'partials/menu.twig' with {
+                        items: footer_navigation.items
+                    } %}
+                </nav>
+                <div class="footer-contacts">
+                    <a href="mailto:support@solvy.agency" aria-label="Send an email to customer support" title="Send an email to customer support">
+                        <img src="{{ theme.link }}/assets/images/email.svg" width="32" height="32" alt="Email" />
+                        <span>support@solvy.agency</span>
+                    </a>
+                    {% if site.option('vcard_setting_tg') %}
+                        <div class="social telegram">
+                            <a href="{{ site.option('vcard_setting_tg') }}" title="Solvy's Telegram" aria-label="Solvy's Telegram">
+                                <img src="{{ theme.link }}/assets/images/tg.svg" width="32" height="32" />
+                            </a>
+                        </div>
+                    {% endif %}
+                    {% if site.option('vcard_setting_skype') %}
+                        <div class="social skype">
+                            <a href="{{ site.option('vcard_setting_skype') }}" title="Solvy's Skype" aria-label="Solvy's Skype">
+                                <img src="{{ theme.link }}/assets/images/skype.svg" width="32" height="32" />
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

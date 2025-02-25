@@ -1,1 +1,1 @@
-(()=>{"use strict";jQuery(document).ready((function(t){console.log("Разработано https://shibitov.ru")}))})();
+(()=>{"use strict";jQuery(document).ready((function(t){console.log("Разработано https://shibitov.ru"),t("#faq-screen .question").click((function(){t(this).toggleClass("shown").find("content").slideToggle("fast")})),t(document).on("click",'a[href^="#"]',(function(e){e.preventDefault(),t("html, body").animate({scrollTop:t(t.attr(this,"href")).offset().top},500)}))}))})();

@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./views/**/*.twig'],
-  important: true,
+  important: false,
   theme: {
     container: {
       center: true,
@@ -12,16 +12,15 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['Montserrat'],
-        serif: ['Montserrat'],
-        mono: ['Montserrat'],
-        display: ['Montserrat'],
-        body: ['Montserrat']
+        sans: ['Inter'],
+        serif: ['Inter'],
+        mono: ['Inter'],
+        display: ['Inter'],
+        body: ['Inter']
       },
       colors: {
-        'background': '#EEEBE5',
-        'ink_blue': '#5336AC',
-        'pine_green': '#229297',
+        'firm_bg': '#12181F',
+        'firm_blue': '#2563EB'
       },
     },
   },
