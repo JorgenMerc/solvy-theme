@@ -7,6 +7,10 @@ body {
     @apply text-white;
 }
 
+body.no-overflow {
+    @apply overflow-hidden;
+}
+
 .wrapper {
     @apply w-full lg:w-[96%] max-w-7xl px-4 md:px-8 lg:px-0 mx-auto;
 }
@@ -50,6 +54,68 @@ h5 {
 
 h6 {
     @apply text-sm;
+}
+
+.wpcf7 {
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"] {
+        @apply max-w-full w-75 bg-[#272D36] p-2 rounded-lg border-0 pl-20;
+    }
+
+    input[type="checkbox"] {
+        @apply bg-[#272D36] rounded-xs border-0;
+    }
+
+    .wpcf7-list-item {
+        @apply !m-0;
+    }
+
+    textarea {
+        @apply max-w-full w-75 h-42 bg-[#272D36] p-2 rounded-lg border-0 pt-10;
+    }
+
+    form p {
+        @apply relative;
+    }
+
+    .wpcf7-form-control-wrap {
+        @apply block relative;
+    }
+
+    label {
+        @apply absolute z-10 top-8 left-2 text-gray-400;
+    }
+
+    .wpcf7-not-valid-tip {
+        @apply text-sm text-center
+    }
+
+    .wpcf7-not-valid {
+        @apply !border-r-4 border-red-700;
+    }
+
+    input[type="submit"] {
+        @apply w-full block text-center p-2 bg-white text-firm_bg rounded-full;
+    }
+
+    .form-grid-2 {
+        @apply grid grid-cols-1 gap-2 max-w-75 mt-8;
+    }
+
+    .wpcf7-acceptance {
+        label {
+            @apply relative top-auto left-auto;
+        }
+    }
+
+    .wpcf7-spinner {
+        @apply absolute top-2 right-3 !m-0;
+    }
+
+    .wpcf7-response-output {
+        @apply max-w-75 !m-0 !mt-8 rounded-lg;
+    }
 }
 
 .btn-pr {
@@ -369,7 +435,7 @@ header {
 
 
 footer {
-    @apply py-16 bg-radial-[at_50%_0%] from-[#272D36] to-[#192029] to-75%;
+    @apply py-16 bg-radial-[at_50%_0%] from-[#272D36] to-[#192029] to-75% relative -z-10;
 
     .row {
         @apply flex flex-col-reverse lg:flex-row items-center justify-between gap-8 flex-nowrap text-center;
@@ -380,7 +446,7 @@ footer {
     }
 
     .nav-main {
-        @apply w-full hidden lg:block;
+        @apply w-full hidden lg:block relative z-0;
 
         ul {
             @apply flex items-center justify-end w-full;
@@ -427,6 +493,27 @@ footer {
 
         a {
             @apply flex items-center gap-2;
+        }
+    }
+}
+
+
+.submit-form-container {
+    @apply hidden fixed w-full h-full overflow-auto top-0 left-0 backdrop-blur;
+
+    .closer {
+        @apply absolute w-full h-full z-10 left-0 top-0;
+    }
+
+    .submit-form {
+        @apply absolute z-20 top-20 left-1/2 -translate-x-1/2 bg-firm_bg p-8 rounded-3xl max-w-full drop-shadow-lg;
+
+        .close-button {
+            @apply float-right p-1 relative z-40 cursor-pointer;
+
+            img {
+                @apply w-5 h-5 block;
+            }
         }
     }
 }

@@ -321,4 +321,14 @@
         </section>
     {% endfor %}
 
+    <div class="submit-form-container">
+        <div class="closer"></div>
+        <div class="submit-form">
+            <div class="close-button">
+                <img src="{{ theme.link }}/assets/images/close.svg" width="30" height="30" alt="Close button" />
+            </div>
+            {% apply shortcodes %}[contact-form-7 id="47f7f78" title="Submit form"]{% endapply %}
+        </div>
+    </div>
+
 {% endblock %}

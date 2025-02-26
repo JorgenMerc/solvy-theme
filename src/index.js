@@ -16,4 +16,14 @@ jQuery( document ).ready( function( $ ) {
         }, 500);
     });
 
+    $('#form-toggler').click(() => {
+        $('.submit-form-container').fadeIn('fast');
+        $('body').addClass('no-overflow');
+    });
+
+    $('.closer, .close-button').click(() => {
+        $('.submit-form-container').fadeOut('fast');
+        $('body').removeClass('no-overflow');
+    });
+
 });
