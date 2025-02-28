@@ -3,8 +3,7 @@
 {% block content %}
     <div class="content-wrapper">
         <article class="post-type-{{ post.type }}" id="post-{{ post.id }}">
-            <img src="{{ post.thumbnail.src|resize(1200, 300) }}" />
-            <section class="article-content">
+            <div class="post-image" style="background-image: url({{ post.thumbnail.src('large') }})">
                 <h1 class="article-h1">{{ post.title }}</h1>
                 <p class="blog-author">
                     <span>By</span>
@@ -12,9 +11,20 @@
                     <span>&bull;</span>
                     <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
                 </p>
-                <div class="article-body">{{ post.content }}</div>
+            </div>
+            <section class="article-content">
+                <div class="article-grid">
+                    <div class="article-body">{{ post.content }}</div>
+                    <div class="article-index">
+                        <div class="article-index-content">
+                            <h2 class="mb-6">
+                                Post Index
+                            </h2>
+                        </div>
+                    </div>
+                </div>
             </section>
-            <section class="comment-box">
+            {#<section class="comment-box">
                 <div class="comments">
                     {% if post.comments %}
                         <h3>comments</h3>
@@ -31,7 +41,7 @@
                 {% else %}
                     {% include 'partials/comment-form.twig' %}
                 {% endif %}
-            </section>
+            </section>#}
         </article>
     </div>
 {% endblock %}

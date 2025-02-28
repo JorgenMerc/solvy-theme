@@ -1,0 +1,19 @@
+<div class="handheld_menu">
+    <nav id="nav-handheld" class="nav-handheld">
+        <div class="grid grid-cols-2 items-center gap-4 mb-6">
+            <div class="emblem-container">
+                <a href="{{ site.url }}" title="Go to Frontpage" aria-label="Go to Frontpage">
+                    <img src="{{ theme.link }}/assets/images/emblem.svg" width="150" height="38" alt="Solvy logo" />
+                </a>
+            </div>
+            <div>
+                <div id="handheld_menu_closer" class="handheld_menu_closer" title="Close menu" aria-label="Close menu">
+                    <img src="{{ theme.link }}/assets/images/close.svg" width="20" height="20" />
+                </div>
+            </div>
+        </div>
+        {% include 'partials/menu.twig' with {
+            items: handheld_navigation.items
+        } %}
+    </nav>
+</div>

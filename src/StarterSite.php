@@ -237,6 +237,7 @@ class StarterSite extends Site {
 
         wp_enqueue_script('jquery');
         wp_enqueue_script('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', 'jquery', '', true);
+        wp_enqueue_script('wow', get_template_directory_uri(). '/assets/scripts/wow.min.js', 'jquery', '', true);
         wp_enqueue_script('theme-scripts', get_template_directory_uri() . '/assets/scripts/script.js', 'jquery', '', true);
     }
 

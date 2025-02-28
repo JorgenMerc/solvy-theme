@@ -241,7 +241,7 @@
     {% for post in blog_obj %}
         <section id="blog-screen" class="content-wrapper">
             <div class="wrapper">
-                <div class="row mb-8">
+                <div class="row !items-start mb-8">
                     <div class="lg:w-1/2">
                         <h2 class="!text-5xl">
                             {{ post.title }}
@@ -290,7 +290,7 @@
                 <h2 class="!text-5xl text-center max-w-xl mx-auto mb-6">
                     {{ post.title }}
                 </h2>
-                <div class="flex flex-col gap-6 items-center justify-center text-center text-xl text-balance max-w-5xl mx-auto">
+                <div class="flex flex-col gap-8 items-center justify-center text-center text-xl text-balance max-w-5xl mx-auto">
                     {{ post.content }}
                 </div>
             </div>
