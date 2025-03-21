@@ -96,7 +96,7 @@ h6 {
     }
 
     input[type="submit"] {
-        @apply w-full block text-center p-2 bg-white text-firm_bg rounded-full;
+        @apply w-full block text-center p-2 bg-white text-firm_bg rounded-[999px];
     }
 
     .form-grid-2 {
@@ -119,11 +119,11 @@ h6 {
 }
 
 .btn-pr {
-    @apply inline-block px-16 py-2 bg-firm_blue text-white font-bold text-xl rounded-full text-center;
+    @apply inline-block px-16 py-2 bg-firm_blue text-white font-bold text-xl rounded-[999px] text-center;
 }
 
 .btn-contact {
-    @apply flex gap-2 px-16 py-2 bg-white text-black font-bold text-xl rounded-full text-center;
+    @apply flex gap-2 px-16 py-2 bg-white text-black font-bold text-xl rounded-[999px] text-center;
 }
 
 header {
@@ -203,7 +203,7 @@ header {
             @apply list-none mb-3;
 
             a {
-                @apply block px-6 py-3 border border-gray-400 rounded-full font-bold text-2xl text-center;
+                @apply block px-6 py-3 border border-gray-400 rounded-[999px] font-bold text-2xl text-center;
             }
         }
     }
@@ -267,8 +267,8 @@ header {
         @apply py-12 flex flex-row flex-wrap lg:flex-col items-start justify-start gap-4;
 
         .feature {
-            @apply px-4 py-2 border border-white rounded-full text-xl flex items-center gap-4
-            before:content-[''] before:w-2 before:h-2 before:bg-firm_blue before:rounded-full;
+            @apply px-4 py-2 border border-white rounded-[999px] text-xl flex items-center gap-4
+            before:content-[''] before:w-2 before:h-2 before:bg-firm_blue before:rounded-[999px];
         }
     }
 }
@@ -313,7 +313,7 @@ header {
         @apply flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mt-12;
 
         li {
-            @apply pr-4 pl-10 py-2 relative text-xl mb-2 rounded-full border border-gray-400;
+            @apply pr-4 pl-10 py-2 relative text-xl mb-2 rounded-[999px] border border-gray-400;
         }
 
         li:before {
@@ -342,7 +342,7 @@ header {
         @apply flex flex-wrap items-center justify-center gap-x-4 gap-y-2 my-12;
 
         li {
-            @apply pr-4 pl-10 py-2 relative text-xl mb-2 rounded-full border border-gray-400;
+            @apply pr-4 pl-10 py-2 relative text-xl mb-2 rounded-[999px] border border-gray-400;
         }
 
         li:before {
@@ -410,7 +410,7 @@ header {
                 @apply flex gap-2;
 
                 .post-cat {
-                    @apply border border-gray-400 text-gray-400 hover:text-white px-4 py-1 rounded-full;
+                    @apply border border-gray-400 text-gray-400 hover:text-white px-4 py-1 rounded-[999px];
                 }
             }
         }
@@ -599,7 +599,7 @@ footer {
             }
 
             li:before {
-                @apply content-[''] w-3 h-3 bg-firm_blue rounded-full bg-contain bg-center bg-no-repeat
+                @apply content-[''] w-3 h-3 bg-firm_blue rounded-[999px] bg-contain bg-center bg-no-repeat
                 absolute top-2 left-0;
             }
         }
@@ -665,7 +665,7 @@ footer {
                 @apply flex gap-2;
 
                 .post-cat {
-                    @apply border border-gray-400 text-gray-400 hover:text-white px-4 py-1 rounded-full;
+                    @apply border border-gray-400 text-gray-400 hover:text-white px-4 py-1 rounded-[999px];
                 }
             }
         }
