@@ -22,10 +22,17 @@
                         </a>
                     </div>
                 {% endif %}
-                {% if site.option('vcard_setting_skype') %}
-                    <div class="social skype">
-                        <a href="{{ site.option('vcard_setting_skype') }}" title="Solvy's Skype" aria-label="Solvy's Skype">
-                            <img src="{{ theme.link }}/assets/images/skype.svg" width="32" height="32" />
+{#                {% if site.option('vcard_setting_skype') %}#}
+{#                    <div class="social skype">#}
+{#                        <a href="{{ site.option('vcard_setting_skype') }}" title="Solvy's Skype" aria-label="Solvy's Skype">#}
+{#                            <img src="{{ theme.link }}/assets/images/skype.svg" width="32" height="32" />#}
+{#                        </a>#}
+{#                    </div>#}
+{#                {% endif %}#}
+                {% if site.option('vcard_setting_teams') %}
+                    <div class="social teams">
+                        <a href="{{ site.option('vcard_setting_teams') }}" title="Solvy's Teams" aria-label="Solvy's Teams">
+                            <img src="{{ theme.link }}/assets/images/teams.svg" width="32" height="32" />
                         </a>
                     </div>
                 {% endif %}

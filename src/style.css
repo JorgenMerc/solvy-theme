@@ -551,7 +551,7 @@ footer {
 .single {
 
     .content-wrapper {
-         @apply pt-4 lg:pt-8 pb-12;
+        @apply pt-4 lg:pt-8 pb-12;
 
         .article-grid {
             @apply flex items-stretch justify-start gap-8;

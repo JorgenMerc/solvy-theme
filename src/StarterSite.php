@@ -322,8 +322,16 @@ class StarterSite extends Site {
             'general',
             'vcard_setting_section'
         );
+        add_settings_field(
+            'vcard_setting_teams',
+            'Teams',
+            [$this, 'vcard_setting_callback_teams_function'],
+            'general',
+            'vcard_setting_section'
+        );
         register_setting( 'general', 'vcard_setting_tg' );
         register_setting( 'general', 'vcard_setting_skype' );
+        register_setting( 'general', 'vcard_setting_teams' );
     }
 
     function vcard_setting_section_callback_function() {
@@ -343,6 +351,14 @@ class StarterSite extends Site {
 		name="vcard_setting_skype"  
 		type="url" 
 		value="' . get_option( 'vcard_setting_skype' ) . '" 
+		class="code"
+	 />';
+    }
+    function vcard_setting_callback_teams_function() {
+        echo '<input 
+		name="vcard_setting_teams"  
+		type="url" 
+		value="' . get_option( 'vcard_setting_teams' ) . '" 
 		class="code"
 	 />';
     }
