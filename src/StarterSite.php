@@ -329,9 +329,17 @@ class StarterSite extends Site {
             'general',
             'vcard_setting_section'
         );
+        add_settings_field(
+            'vcard_setting_whatsapp',
+            'Whatsapp',
+            [$this, 'vcard_setting_callback_whatsapp_function'],
+            'general',
+            'vcard_setting_section'
+        );
         register_setting( 'general', 'vcard_setting_tg' );
         register_setting( 'general', 'vcard_setting_skype' );
         register_setting( 'general', 'vcard_setting_teams' );
+        register_setting( 'general', 'vcard_setting_whatsapp' );
     }
 
     function vcard_setting_section_callback_function() {
@@ -359,6 +367,14 @@ class StarterSite extends Site {
 		name="vcard_setting_teams"  
 		type="url" 
 		value="' . get_option( 'vcard_setting_teams' ) . '" 
+		class="code"
+	 />';
+    }
+    function vcard_setting_callback_whatsapp_function() {
+        echo '<input 
+		name="vcard_setting_whatsapp"  
+		type="url" 
+		value="' . get_option( 'vcard_setting_whatsapp' ) . '" 
 		class="code"
 	 />';
     }

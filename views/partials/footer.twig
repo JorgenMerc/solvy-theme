@@ -59,6 +59,13 @@
                             </a>
                         </div>
                     {% endif %}
+                    {% if site.option('vcard_setting_whatsapp') %}
+                        <div class="social whatsapp">
+                            <a href="{{ site.option('vcard_setting_whatsapp') }}" title="Solvy's Whatsapp" aria-label="Whatsapp's Teams">
+                                <img src="{{ theme.link }}/assets/images/whatsapp.svg" width="32" height="32" />
+                            </a>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
