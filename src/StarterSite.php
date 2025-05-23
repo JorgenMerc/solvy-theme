@@ -144,6 +144,11 @@ class StarterSite extends Site {
         );
         $context['cta3_obj'] = Timber::get_posts($cta3_obj_args);
 
+        $affiliate_obj_args = array(
+            'pagename' => 'affiliate'
+        );
+        $context['affiliate_obj'] = Timber::get_posts($affiliate_obj_args);
+
         $contacts_obj_args = array(
             'pagename' => 'contacts'
         );

@@ -297,6 +297,20 @@
         </section>
     {% endfor %}
 
+    {% for post in affiliate_obj %}
+        <section id="affiliate" class="content-wrapper">
+            <img src="{{ theme.link }}/assets/images/gradient.webp" class="gradient" />
+            <div class="wrapper">
+                <h2 class="!text-5xl text-center max-w-xl mx-auto mb-6">
+                    {{ post.title }}
+                </h2>
+                <div class="flex flex-col gap-8 items-center justify-center text-center text-xl text-balance max-w-5xl mx-auto">
+                    {{ post.content }}
+                </div>
+            </div>
+        </section>
+    {% endfor %}
+
     {% for post in contacts_obj %}
         <section id="contacts-screen" class="content-wrapper">
             <img src="{{ theme.link }}/assets/images/gradient2.webp" class="gradient2" />
